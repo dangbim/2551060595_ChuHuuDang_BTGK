@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Dịch vụ hỗ trợ · CampusMind</title>
+
+  <!-- Google Fonts: Fraunces (headings) & Be Vietnam Pro (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN + custom color tokens (Slide 15) -->
+  <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: '#2F7A66',
+            'sage-deep': '#1C5344',
+            'amber-ai': '#D79B34',
+            'clay-alert': '#C4643F',
+            ink: '#16241D',
+            paper: '#F2EEE6',
+            'sage-tint': '#DCEAE3',
+            'sky-info': '#3B6E92',
+            'card-border': '#E4DDD4'
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS riêng của trang Dịch vụ -->
+  <link rel="stylesheet" href="css/services.css">
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen">
+  <div class="min-h-screen flex flex-col @container">
+
+    <!-- ================= HEADER ================= -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-card-border sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-4 @sm:px-6 @lg:px-8 h-16 flex items-center justify-between gap-4">
+        <a href="../index.html" class="flex items-center gap-3 group" aria-label="Về trang chủ CampusMind">
+          <div class="w-9 h-9 rounded-xl bg-sage-deep text-white flex items-center justify-center shadow-sm">
+            <svg class="w-5 h-5 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10a10 10 0 0 1-10-10C2 6.477 6.477 2 12 2z"/>
+              <path d="M7 12c1.5-2 3.5-3 5-3s3.5 1 5 3"/>
+              <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-xl tracking-tight text-ink flex items-center gap-1.5 group-hover:text-sage transition-colors">
+              CampusMind
+            </span>
+            <span class="text-[10px] uppercase tracking-wider text-sage font-semibold block leading-none">
+              Student Wellbeing Hub
+            </span>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-2 text-xs">
+          <span class="hidden @sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sage-tint text-sage-deep font-semibold">
+            <i data-lucide="layout-grid" class="w-3.5 h-3.5" aria-hidden="true"></i>
+            Trang Dịch vụ
+          </span>
+          <a href="../index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-card-border bg-white hover:bg-paper font-medium text-ink/80 transition-colors">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5" aria-hidden="true"></i>
+            Về CampusMind
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 @sm:px-6 @lg:px-8 py-6 @container">
+      <nav class="flex items-center gap-1.5 text-[11px] text-ink/50 mb-4" aria-label="Breadcrumb">
+        <a href="../index.html" class="hover:text-sage transition-colors">Trang chủ</a>
+        <span aria-hidden="true">/</span>
+        <span class="font-semibold text-ink/70">Dịch vụ hỗ trợ</span>
+      </nav>
+
+      <section class="grid grid-cols-1 @lg:grid-cols-4 gap-8" aria-label="Danh sách dịch vụ hỗ trợ">
+        <!-- Sidebar Filters -->
+        <aside class="space-y-6">
+          <div class="bg-white p-5 rounded-2xl border border-card-border shadow-sm">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-ink/50 mb-3">DANH MỤC</h3>
+            <ul class="space-y-1 text-xs" id="services-category-list">
+              <!-- Populated by js/services.js -->
+            </ul>
+          </div>
+
+          <!-- AI Navigator Callout Box -->
+          <div class="bg-gradient-to-br from-sage-deep to-[#143B30] text-white p-5 rounded-2xl shadow-sm border border-sage space-y-3">
+            <div class="flex items-center gap-1.5 text-amber-ai text-xs font-bold">
+              <span aria-hidden="true">✦</span>
+              <span>AI NAVIGATOR</span>
+            </div>
+            <p class="text-xs text-white/90 leading-relaxed">
+              Chưa biết nên chọn dịch vụ nào? Trả lời 4 câu hỏi ngắn để được gợi ý tức thì.
+            </p>
+            <button
+              type="button"
+              id="btn-open-ai-quiz"
+              class="w-full py-2 bg-amber-ai hover:bg-amber-500 text-ink font-bold text-xs rounded-xl transition-all shadow"
+            >
+              Bắt đầu đánh giá
+            </button>
+          </div>
+        </aside>
+
+        <!-- Main Services Grid -->
+        <div class="@lg:col-span-3 space-y-6">
+          <!-- Header and search bar -->
+          <div class="flex flex-col @sm:flex-row @sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-card-border">
+            <div>
+              <h2 class="font-serif text-2xl font-bold text-ink">Dịch vụ hỗ trợ</h2>
+              <p id="services-summary" class="text-xs text-ink/60 mt-0.5" aria-live="polite">
+                12 dịch vụ đang hoạt động · cập nhật 02/06/2025
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="relative">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-ink/40 absolute left-3 top-1/2 -translate-y-1/2" aria-hidden="true"></i>
+                <input
+                  type="search"
+                  id="services-search-input"
+                  placeholder="Tìm dịch vụ..."
+                  aria-label="Tìm kiếm dịch vụ"
+                  class="pl-8 pr-3 py-1.5 text-xs bg-paper rounded-lg border border-card-border focus:outline-none focus:border-sage text-ink"
+                />
+              </div>
+
+              <select
+                id="services-sort-select"
+                aria-label="Sắp xếp danh sách dịch vụ"
+                class="text-xs bg-paper border border-card-border rounded-lg px-2.5 py-1.5 text-ink focus:outline-none focus:border-sage"
+              >
+                <option value="popular">Sắp xếp: Phổ biến ▾</option>
+                <option value="newest">Mới nhất</option>
+                <option value="shortest">Thời lượng ngắn nhất</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Filter Chips -->
+          <div class="flex flex-wrap gap-2 text-xs" id="services-filter-chips" role="group" aria-label="Lọc nhanh theo danh mục">
+            <!-- Populated by js/services.js -->
+          </div>
+
+          <!-- Services Cards Grid -->
+          <div class="grid grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 gap-5" id="services-grid">
+            <!-- Populated by js/services.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-white border-t border-card-border mt-auto">
+      <div class="max-w-7xl mx-auto px-4 @sm:px-6 @lg:px-8 py-5 flex flex-col @sm:flex-row items-center justify-between gap-2 text-[11px] text-ink/50">
+        <div>© 2025 CampusMind · Trang Dịch vụ tách riêng (HTML / CSS / JS độc lập)</div>
+        <div class="flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sage" aria-hidden="true"></i>
+          <span>Thông tin dịch vụ mang tính định hướng, không thay thế chẩn đoán y khoa.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================= AI-1 SUPPORT NAVIGATOR MODAL ================= -->
+  <div
+    id="ai-quiz-modal"
+    class="modal-backdrop hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ai-quiz-title"
+  >
+    <div class="modal-panel bg-white rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden border border-card-border">
+      <div class="bg-sage-deep text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-amber-ai font-bold text-lg" aria-hidden="true">✦</span>
+          <div>
+            <h3 id="ai-quiz-title" class="font-serif font-bold text-base">AI-1 · Support Navigator</h3>
+            <p class="text-[11px] text-white/70">Khảo sát 4 câu hỏi định hướng dịch vụ phù hợp</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          data-close-modal="ai-quiz-modal"
+          class="text-white/80 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors"
+          aria-label="Đóng khảo sát AI"
+        >
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-5" id="ai-quiz-content">
+        <!-- Populated by js/services.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BOOKING MODAL ================= -->
+  <div
+    id="booking-modal"
+    class="modal-backdrop hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="booking-modal-title"
+  >
+    <div class="modal-panel bg-white rounded-2xl max-w-md w-full shadow-2xl border border-card-border overflow-hidden">
+      <div class="bg-sage-deep text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="calendar-plus" class="w-5 h-5 text-amber-ai" aria-hidden="true"></i>
+          <div>
+            <h3 id="booking-modal-title" class="font-serif font-bold text-base">Đặt lịch dịch vụ</h3>
+            <p class="text-[11px] text-white/70">Chọn thời gian mong muốn, chuyên viên sẽ xác nhận lại</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          data-close-modal="booking-modal"
+          class="text-white/80 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors"
+          aria-label="Đóng form đặt lịch"
+        >
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <form id="booking-form" class="p-6 space-y-4 text-xs" novalidate>
+        <div class="bg-paper rounded-xl p-4 space-y-1 border border-card-border">
+          <h4 id="booking-service-name" class="font-serif font-bold text-base text-ink"></h4>
+          <p id="booking-service-meta" class="text-ink/60"></p>
+          <p id="booking-service-counselor" class="text-ink/60"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="booking-date" class="block font-medium text-ink mb-1">Ngày mong muốn</label>
+            <input
+              type="date"
+              id="booking-date"
+              required
+              class="w-full px-3 py-2 border border-card-border rounded-lg focus:outline-none focus:border-sage text-ink text-xs"
+            />
+          </div>
+          <div>
+            <label for="booking-time" class="block font-medium text-ink mb-1">Khung giờ</label>
+            <select
+              id="booking-time"
+              required
+              class="w-full px-3 py-2 border border-card-border rounded-lg focus:outline-none focus:border-sage text-ink text-xs bg-white"
+            >
+              <option value="08:00">08:00 – 09:00</option>
+              <option value="09:30">09:30 – 10:30</option>
+              <option value="13:30" selected>13:30 – 14:30</option>
+              <option value="15:00">15:00 – 16:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="booking-note" class="block font-medium text-ink mb-1">Ghi chú (không bắt buộc)</label>
+          <textarea
+            id="booking-note"
+            rows="3"
+            placeholder="Ví dụ: Em muốn trao đổi thêm về áp lực thi cử..."
+            class="w-full px-3 py-2 border border-card-border rounded-lg focus:outline-none focus:border-sage text-ink text-xs resize-none"
+          ></textarea>
+        </div>
+
+        <p id="booking-error" class="hidden text-[11px] text-clay-alert bg-[#FDF0EB] border border-[#F3D2C7] rounded-lg px-3 py-2" role="alert">
+          <!-- Populated by js/services.js -->
+        </p>
+
+        <div class="pt-3 border-t border-card-border flex justify-end gap-2">
+          <button
+            type="button"
+            data-close-modal="booking-modal"
+            class="px-4 py-2 border border-card-border rounded-lg hover:bg-paper font-medium transition-colors"
+          >
+            Hủy
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 bg-sage hover:bg-sage-deep text-white font-semibold rounded-lg shadow-sm transition-colors"
+          >
+            Xác nhận đặt lịch
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Hub -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-[60] flex flex-col gap-2 pointer-events-none" aria-live="polite"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>
