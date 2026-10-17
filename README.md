@@ -1,9 +1,5 @@
 # Dịch vụ hỗ trợ · CampusMind (Standalone)
 
-Thư mục này chứa **phần Dịch vụ** của dự án `homework-main` được tách thành một
-trang độc lập, gồm đầy đủ HTML – CSS – JavaScript và **không phụ thuộc** vào
-`js/app.js`, `js/data.js`, `js/ai-engine.js` hay `css/styles.css` của dự án gốc.
-
 ## Cấu trúc
 
 ```text
