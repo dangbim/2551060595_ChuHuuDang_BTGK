@@ -17,19 +17,6 @@ services-standalone/
 └── README.md
 ```
 
-## Cách chạy
-
-Cách 1: mở trực tiếp `index.html` bằng trình duyệt.
-
-Cách 2 (khuyến nghị): chạy một static server tại thư mục gốc dự án rồi truy cập
-`http://localhost:8000/services-standalone/`.
-
-```powershell
-# Chạy tại thư mục homework-main
-python -m http.server 8000
-# hoặc
-npx serve .
-```
 
 ## Chức năng
 
@@ -54,3 +41,7 @@ npx serve .
 - Link "Về CampusMind" trỏ tới `../index.html`, vì thư mục này nằm trong dự án
   gốc. Khi copy thư mục ra ngoài, hãy sửa link này cho phù hợp.
 - Dữ liệu đặt lịch chỉ mô phỏng ở phía client (toast xác nhận), chưa kết nối API.
+## Nộp Bài
+-Link figma :https://www.figma.com/design/n5BwsV6i8N6XUNpaR6jKVc/Untitled?node-id=0-1&p=f&t=IgvTS8NfuWqm93g4-0
+-Link github:
+-Link youtube:
