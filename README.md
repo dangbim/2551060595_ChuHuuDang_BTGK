@@ -43,5 +43,5 @@ services-standalone/
 - Dữ liệu đặt lịch chỉ mô phỏng ở phía client (toast xác nhận), chưa kết nối API.
 ## Nộp Bài
 -Link figma :https://www.figma.com/design/n5BwsV6i8N6XUNpaR6jKVc/Untitled?node-id=0-1&p=f&t=IgvTS8NfuWqm93g4-0
--Link github:
--Link youtube:
+-Link github:https://github.com/dangbim/2551060595_ChuHuuDang_BTGK
+-Link youtube:https://www.youtube.com/playlist?list=PLSCGl-BDzmx4
